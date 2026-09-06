@@ -1,0 +1,2280 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>لميكــي 🐱♡</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Cairo",sans-serif;
+    overflow-x:hidden;
+    background:#fff8fc;
+    color:#302c3b;
+}
+
+button{
+    font-family:inherit;
+    border:0;
+    cursor:pointer;
+}
+
+img{
+    max-width:100%;
+}
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+:root{
+    --pink:#ff9fc3;
+    --pink2:#ffd8e7;
+    --pink3:#fff0f6;
+
+    --blue:#aee4ff;
+    --blue2:#dff5ff;
+
+    --purple:#aa8cff;
+
+    --dark:#302c3b;
+    --gray:#777180;
+
+    --white:#ffffff;
+}
+
+/* =====================================================
+   LOADING / OPENING
+===================================================== */
+
+.opening{
+    position:fixed;
+    inset:0;
+    z-index:99999;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+        radial-gradient(circle at 20% 20%,#ffffff 0%,transparent 20%),
+        radial-gradient(circle at 80% 80%,#ffffffaa 0%,transparent 25%),
+        linear-gradient(145deg,#bdeaff,#ffd5e6);
+
+    transition:1.2s ease;
+}
+
+.opening.hide{
+    opacity:0;
+    pointer-events:none;
+    transform:scale(1.05);
+}
+
+.open-card{
+    width:min(90%,460px);
+    padding:45px 28px;
+
+    text-align:center;
+
+    background:#ffffffc7;
+    backdrop-filter:blur(25px);
+
+    border:1px solid #ffffff;
+
+    border-radius:40px;
+
+    box-shadow:0 30px 100px #6f627625;
+
+    animation:cardFloat 4s infinite;
+}
+
+.open-cat{
+    font-size:85px;
+    animation:catWiggle 3s infinite;
+}
+
+.open-card h1{
+    margin:15px 0 10px;
+    font-size:32px;
+}
+
+.open-card p{
+    color:var(--gray);
+    line-height:2;
+    font-size:15px;
+}
+
+.open-btn{
+    margin-top:25px;
+    padding:15px 30px;
+
+    border-radius:999px;
+
+    color:white;
+    font-size:16px;
+    font-weight:800;
+
+    background:linear-gradient(135deg,var(--pink),#9fdfff);
+
+    box-shadow:0 15px 35px #f28bb450;
+
+    transition:.3s;
+}
+
+.open-btn:hover{
+    transform:translateY(-5px) scale(1.03);
+}
+
+/* =====================================================
+   MUSIC
+===================================================== */
+
+.music{
+    position:fixed;
+    left:18px;
+    bottom:18px;
+
+    z-index:1000;
+
+    width:52px;
+    height:52px;
+
+    border-radius:50%;
+
+    background:#ffffffd9;
+    backdrop-filter:blur(15px);
+
+    box-shadow:0 10px 35px #00000018;
+
+    display:none;
+    align-items:center;
+    justify-content:center;
+
+    font-size:20px;
+}
+
+.music.show{
+    display:flex;
+}
+
+.music.playing{
+    animation:musicPulse 1.7s infinite;
+}
+
+/* =====================================================
+   GENERAL
+===================================================== */
+
+section{
+    position:relative;
+    overflow:hidden;
+}
+
+.container{
+    width:min(100%,1000px);
+    margin:auto;
+}
+
+.center{
+    text-align:center;
+}
+
+.small-label{
+    display:inline-block;
+
+    padding:8px 17px;
+
+    border-radius:999px;
+
+    background:#ffffffaa;
+
+    color:#777080;
+
+    font-size:12px;
+
+    backdrop-filter:blur(10px);
+}
+
+.section-title{
+    font-size:clamp(32px,7vw,58px);
+    line-height:1.2;
+}
+
+.section-sub{
+    margin:18px auto 0;
+
+    max-width:650px;
+
+    color:var(--gray);
+
+    line-height:2;
+
+    font-size:16px;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:40px 20px;
+
+    text-align:center;
+
+    background:
+        radial-gradient(circle at 10% 10%,#ffffffaa,transparent 18%),
+        radial-gradient(circle at 90% 90%,#ffffffaa,transparent 20%),
+        linear-gradient(135deg,#bceaff,#ffd8e8);
+}
+
+.hero-content{
+    position:relative;
+    z-index:5;
+}
+
+.hero-cat{
+    font-size:100px;
+
+    animation:heroCat 4s ease-in-out infinite;
+
+    filter:drop-shadow(0 15px 10px #6f637520);
+}
+
+.hero h1{
+    margin:15px 0;
+
+    font-size:clamp(48px,13vw,100px);
+
+    line-height:1;
+
+    color:#302c3b;
+}
+
+.hero h1 span{
+    color:#f17ca9;
+}
+
+.hero-text{
+    max-width:700px;
+
+    margin:auto;
+
+    color:#665f70;
+
+    line-height:2.1;
+
+    font-size:18px;
+}
+
+.hero-button{
+    margin-top:35px;
+
+    padding:14px 28px;
+
+    border-radius:999px;
+
+    background:#ffffffc9;
+
+    color:#625a6d;
+
+    box-shadow:0 12px 35px #75687d1a;
+
+    animation:softBounce 2s infinite;
+}
+
+/* =====================================================
+   FLOATING DECOR
+===================================================== */
+
+.decor{
+    position:absolute;
+
+    pointer-events:none;
+
+    opacity:.65;
+
+    font-size:28px;
+
+    animation:decorFloat 7s ease-in-out infinite;
+}
+
+.d1{top:15%;left:5%;}
+.d2{top:35%;right:5%;animation-delay:1s;}
+.d3{bottom:15%;left:12%;animation-delay:2s;}
+.d4{bottom:25%;right:10%;animation-delay:3s;}
+
+/* =====================================================
+   INTRO STORY
+===================================================== */
+
+.story{
+    padding:120px 20px;
+
+    background:#fffafd;
+}
+
+.story-intro{
+    text-align:center;
+
+    margin-bottom:80px;
+}
+
+/* =====================================================
+   CHAT SECTION
+===================================================== */
+
+.chat-section{
+    padding:110px 20px;
+
+    background:
+        radial-gradient(circle at 10% 30%,#ffffffaa,transparent 20%),
+        linear-gradient(180deg,#e8f8ff,#d5f0ff);
+}
+
+.chat-box{
+    width:min(100%,620px);
+
+    margin:50px auto 0;
+
+    padding:22px;
+
+    background:#ffffffd0;
+
+    backdrop-filter:blur(20px);
+
+    border-radius:30px;
+
+    box-shadow:0 25px 70px #5f6c7618;
+}
+
+.chat-top{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    padding-bottom:18px;
+
+    border-bottom:1px solid #eee;
+}
+
+.chat-avatar{
+    width:45px;
+    height:45px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#ffd7e7;
+
+    font-size:23px;
+}
+
+.chat-name{
+    font-weight:800;
+}
+
+.chat-status{
+    color:#77b98c;
+    font-size:11px;
+}
+
+.messages{
+    padding:25px 5px;
+}
+
+.message{
+    max-width:82%;
+
+    padding:12px 16px;
+
+    margin-bottom:13px;
+
+    border-radius:20px;
+
+    line-height:1.8;
+
+    font-size:14px;
+
+    animation:messageIn .7s both;
+}
+
+.message.her{
+    margin-left:auto;
+
+    background:#ffdbe9;
+
+    border-bottom-right-radius:5px;
+}
+
+.message.me{
+    margin-right:auto;
+
+    background:#d9f3ff;
+
+    border-bottom-left-radius:5px;
+}
+
+.message:nth-child(2){animation-delay:.2s}
+.message:nth-child(3){animation-delay:.4s}
+.message:nth-child(4){animation-delay:.6s}
+.message:nth-child(5){animation-delay:.8s}
+
+/* =====================================================
+   SCREENSHOT MEMORIES
+===================================================== */
+
+.memories{
+    padding:120px 20px;
+
+    background:#fff0f6;
+}
+
+.memory-grid{
+    margin-top:65px;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:35px;
+}
+
+.memory-card{
+    background:white;
+
+    padding:12px;
+
+    border-radius:25px;
+
+    box-shadow:0 25px 60px #785f6d16;
+
+    transition:.5s;
+
+    transform:rotate(-2deg);
+}
+
+.memory-card:nth-child(even){
+    transform:rotate(2deg);
+}
+
+.memory-card:hover{
+    transform:translateY(-10px) rotate(0);
+}
+
+.memory-card img{
+    width:100%;
+
+    aspect-ratio:4/5;
+
+    object-fit:cover;
+
+    border-radius:18px;
+}
+
+.memory-caption{
+    padding:17px 10px 10px;
+
+    text-align:center;
+
+    color:#777080;
+
+    font-size:13px;
+}
+
+/* =====================================================
+   BIG EMOTIONAL MESSAGE
+===================================================== */
+
+.emotional{
+    min-height:90vh;
+
+    display:flex;
+    align-items:center;
+
+    padding:100px 20px;
+
+    background:#302c3b;
+
+    color:white;
+
+    text-align:center;
+}
+
+.emotional .container{
+    max-width:800px;
+}
+
+.emotional .small-label{
+    background:#ffffff12;
+    color:#dcd7e3;
+}
+
+.emotional h2{
+    margin:25px 0;
+
+    font-size:clamp(34px,8vw,65px);
+
+    line-height:1.3;
+}
+
+.emotional p{
+    color:#d1ccd8;
+
+    font-size:18px;
+
+    line-height:2.3;
+}
+
+.emotional .highlight{
+    display:block;
+
+    margin-top:30px;
+
+    color:#ffabc9;
+
+    font-size:25px;
+
+    font-weight:800;
+}
+
+/* =====================================================
+   SOLVED SECTION
+===================================================== */
+
+.solved{
+    padding:120px 20px;
+
+    background:
+        radial-gradient(circle at 50% 0,#ffffffaa,transparent 25%),
+        linear-gradient(145deg,#c9efff,#ffe1ec);
+
+    text-align:center;
+}
+
+.solved-word{
+    margin:45px 0;
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+}
+
+.word{
+    padding:14px 22px;
+
+    background:#ffffffc9;
+
+    border-radius:18px;
+
+    font-size:20px;
+
+    font-weight:800;
+
+    box-shadow:0 10px 30px #6d617015;
+
+    animation:wordFloat 3s infinite;
+}
+
+.word:nth-child(2){animation-delay:.3s}
+.word:nth-child(3){animation-delay:.6s}
+.word:nth-child(4){animation-delay:.9s}
+
+/* =====================================================
+   PHOTO
+===================================================== */
+
+.photo{
+    padding:120px 20px;
+
+    background:#fffafd;
+
+    text-align:center;
+}
+
+.photo-frame{
+    width:min(90%,380px);
+
+    margin:50px auto 30px;
+
+    padding:13px;
+
+    background:white;
+
+    border-radius:28px;
+
+    box-shadow:0 30px 80px #7669771c;
+
+    transform:rotate(2deg);
+
+    transition:.5s;
+}
+
+.photo-frame:hover{
+    transform:rotate(0) scale(1.02);
+}
+
+.photo-frame img{
+    width:100%;
+
+    display:block;
+
+    border-radius:19px;
+}
+
+.photo-title{
+    font-size:28px;
+
+    color:#f07fa8;
+
+    font-weight:800;
+}
+
+/* =====================================================
+   LETTER
+===================================================== */
+
+.letter{
+    padding:120px 20px;
+
+    background:#e7f8ff;
+}
+
+.letter-paper{
+    width:min(100%,750px);
+
+    margin:50px auto 0;
+
+    padding:45px 35px;
+
+    background:#fffdf8;
+
+    border-radius:5px;
+
+    box-shadow:0 30px 80px #63707820;
+
+    position:relative;
+
+    transform:rotate(-.7deg);
+}
+
+.letter-paper:before{
+    content:"";
+
+    position:absolute;
+
+    inset:15px;
+
+    border:1px dashed #edb7cb;
+
+    pointer-events:none;
+}
+
+.letter-paper h3{
+    color:#ef82aa;
+
+    font-size:27px;
+
+    margin-bottom:25px;
+}
+
+.letter-paper p{
+    position:relative;
+    z-index:2;
+
+    color:#5f5867;
+
+    line-height:2.5;
+
+    font-size:17px;
+}
+
+.signature{
+    margin-top:30px;
+
+    text-align:left;
+
+    font-size:20px;
+
+    font-weight:800;
+
+    color:#ef82aa;
+}
+
+/* =====================================================
+   GAME
+===================================================== */
+
+.game-section{
+    padding:120px 20px;
+
+    background:
+        radial-gradient(circle at 20% 20%,#ffffffaa,transparent 20%),
+        linear-gradient(145deg,#ffdce9,#c8edff);
+
+    text-align:center;
+}
+
+.game-container{
+    width:min(100%,520px);
+
+    margin:50px auto 0;
+
+    padding:15px;
+
+    background:#ffffffbb;
+
+    backdrop-filter:blur(20px);
+
+    border-radius:30px;
+
+    box-shadow:0 30px 80px #625a7018;
+}
+
+.game{
+    position:relative;
+
+    width:100%;
+
+    height:430px;
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+    background:
+        radial-gradient(circle at 20% 20%,#ffffffaa,transparent 15%),
+        linear-gradient(135deg,#e3f8ff,#ffeaf3);
+}
+
+/* decorative dots */
+
+.game-dot{
+    position:absolute;
+
+    width:10px;
+    height:10px;
+
+    border-radius:50%;
+
+    background:#ffffff;
+
+    opacity:.7;
+}
+
+/* walls */
+
+.wall{
+    position:absolute;
+
+    background:#ffffff;
+
+    border-radius:999px;
+
+    box-shadow:0 7px 20px #60727b15;
+}
+
+.w1{
+    width:70%;
+    height:17px;
+    top:70px;
+    right:0;
+}
+
+.w2{
+    width:17px;
+    height:150px;
+    top:70px;
+    left:25%;
+}
+
+.w3{
+    width:65%;
+    height:17px;
+    top:220px;
+    left:0;
+}
+
+.w4{
+    width:17px;
+    height:150px;
+    top:220px;
+    right:25%;
+}
+
+.w5{
+    width:45%;
+    height:17px;
+    bottom:55px;
+    right:0;
+}
+
+/* cat */
+
+.player{
+    position:absolute;
+
+    width:48px;
+    height:48px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:37px;
+
+    z-index:5;
+
+    transition:.15s linear;
+
+    filter:drop-shadow(0 7px 5px #00000015);
+}
+
+/* goal */
+
+.goal{
+    position:absolute;
+
+    right:20px;
+    bottom:18px;
+
+    width:75px;
+    height:75px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:47px;
+
+    animation:goalPulse 1.5s infinite;
+}
+
+.controls{
+    display:grid;
+
+    grid-template-columns:repeat(3,60px);
+
+    justify-content:center;
+
+    gap:7px;
+
+    margin-top:18px;
+}
+
+.controls button{
+    width:60px;
+    height:50px;
+
+    border-radius:15px;
+
+    background:white;
+
+    font-size:20px;
+
+    box-shadow:0 8px 20px #00000010;
+}
+
+.empty{
+    visibility:hidden;
+}
+
+.game-note{
+    margin-top:15px;
+
+    color:#777080;
+
+    font-size:12px;
+}
+
+/* =====================================================
+   WIN MODAL
+===================================================== */
+
+.win{
+    position:fixed;
+
+    inset:0;
+
+    z-index:9990;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:20px;
+
+    background:#ffe7f1dd;
+
+    backdrop-filter:blur(18px);
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.5s;
+}
+
+.win.show{
+    opacity:1;
+    visibility:visible;
+}
+
+.win-card{
+    width:min(90%,450px);
+
+    padding:45px 28px;
+
+    background:white;
+
+    border-radius:35px;
+
+    text-align:center;
+
+    box-shadow:0 30px 100px #66536c30;
+
+    transform:scale(.7);
+
+    transition:.5s;
+}
+
+.win.show .win-card{
+    transform:scale(1);
+}
+
+.win-cat{
+    font-size:75px;
+}
+
+.win-card h2{
+    margin:15px 0;
+
+    font-size:38px;
+
+    color:#ef7fa8;
+}
+
+.win-card p{
+    color:#716878;
+
+    line-height:2.2;
+
+    font-size:17px;
+}
+
+.win-heart{
+    display:block;
+
+    margin-top:20px;
+
+    font-size:48px;
+
+    animation:heartBeat 1.4s infinite;
+}
+
+.continue{
+    margin-top:25px;
+
+    padding:13px 25px;
+
+    border-radius:999px;
+
+    background:#c5ecff;
+
+    color:#555064;
+
+    font-weight:700;
+}
+
+/* =====================================================
+   FINAL
+===================================================== */
+
+.final{
+    min-height:100vh;
+
+    padding:100px 20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    background:
+        radial-gradient(circle at 50% 15%,#ffffffaa,transparent 22%),
+        linear-gradient(145deg,#ffd3e5,#bfeaff);
+}
+
+.final-content{
+    max-width:800px;
+
+    position:relative;
+    z-index:5;
+}
+
+.final-cat{
+    font-size:95px;
+
+    animation:heroCat 4s infinite;
+}
+
+.final h2{
+    margin:20px 0;
+
+    font-size:clamp(42px,10vw,82px);
+
+    color:#ee78a4;
+
+    line-height:1.1;
+}
+
+.final p{
+    color:#5e576a;
+
+    line-height:2.3;
+
+    font-size:18px;
+}
+
+.final strong{
+    color:#e96f9e;
+}
+
+.final-sign{
+    margin-top:35px;
+
+    font-size:18px;
+
+    color:#817789;
+}
+
+.final-heart{
+    margin-top:25px;
+
+    font-size:50px;
+
+    animation:heartBeat 1.5s infinite;
+}
+
+/* =====================================================
+   PARTICLES
+===================================================== */
+
+.particle{
+    position:fixed;
+
+    z-index:99999;
+
+    pointer-events:none;
+
+    font-size:22px;
+
+    animation:particle 2.5s forwards;
+}
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes cardFloat{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-10px)}
+}
+
+@keyframes catWiggle{
+    0%,100%{transform:rotate(-3deg)}
+    50%{transform:rotate(4deg) translateY(-8px)}
+}
+
+@keyframes heroCat{
+    0%,100%{transform:translateY(0) rotate(-3deg)}
+    50%{transform:translateY(-15px) rotate(3deg)}
+}
+
+@keyframes softBounce{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-7px)}
+}
+
+@keyframes decorFloat{
+    0%,100%{transform:translateY(0) rotate(-5deg)}
+    50%{transform:translateY(-25px) rotate(8deg)}
+}
+
+@keyframes messageIn{
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes wordFloat{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-8px)}
+}
+
+@keyframes goalPulse{
+    0%,100%{transform:scale(1)}
+    50%{transform:scale(1.18)}
+}
+
+@keyframes heartBeat{
+    0%,100%{transform:scale(1)}
+    50%{transform:scale(1.2)}
+}
+
+@keyframes musicPulse{
+    0%,100%{box-shadow:0 0 0 0 #ff9fc355}
+    50%{box-shadow:0 0 0 13px #ff9fc300}
+}
+
+@keyframes particle{
+    0%{
+        opacity:1;
+        transform:translateY(0) scale(.8);
+    }
+    100%{
+        opacity:0;
+        transform:translateY(-180px) scale(1.5) rotate(30deg);
+    }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:700px){
+
+    .memory-grid{
+        grid-template-columns:1fr;
+    }
+
+    .memory-card,
+    .memory-card:nth-child(even){
+        transform:rotate(-1deg);
+    }
+
+    .letter-paper{
+        padding:40px 22px;
+    }
+
+    .letter-paper p{
+        font-size:15px;
+    }
+
+    .game{
+        height:400px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- =====================================================
+     OPENING
+===================================================== -->
+
+<div class="opening" id="opening">
+
+    <div class="open-card">
+
+        <div class="open-cat">🐱</div>
+
+        <h1>يا ميكي...</h1>
+
+        <p>
+            قبل ما تفتحي الموقع ده،<br>
+            لازم تعرفي إن اللي جواه معمول مخصوص ليكي.
+            <br><br>
+            فخدي نفس كده...
+            واضغطي.
+        </p>
+
+        <button class="open-btn" onclick="start()">
+            افتحي يا ميكي 🩷
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     MUSIC
+===================================================== -->
+
+<audio id="song" loop>
+    <source src="assets/song.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music" id="musicBtn" onclick="toggleMusic()">
+    🎵
+</button>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+    <div class="decor d1">🐾</div>
+    <div class="decor d2">🩷</div>
+    <div class="decor d3">🐱</div>
+    <div class="decor d4">✨</div>
+
+    <div class="hero-content">
+
+        <div class="hero-cat">🐱</div>
+
+        <span class="small-label">
+            رسالة مخصوص لبنت واحدة بس
+        </span>
+
+        <h1>
+            أخيرًا يا <span>ميكي</span>...
+        </h1>
+
+        <p class="hero-text">
+            أخيرًا خلصتي.
+            <br>
+            بعد أيام كتير كان الضغط فيها سابقك،
+            وبعد كل مرة قلتي فيها "أنا تعبت"
+            و"مش قادرة أكمل"...
+            <br><br>
+            أهو إنتي هنا.
+            <br>
+            وصلتي للآخر. 🩷
+        </p>
+
+        <button class="hero-button"
+                onclick="go('story')">
+            تعالي نمشي في الحكاية سوا ↓
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     STORY INTRO
+===================================================== -->
+
+<section class="story" id="story">
+
+    <div class="container">
+
+        <div class="story-intro">
+
+            <span class="small-label">
+                rewind...
+            </span>
+
+            <h2 class="section-title">
+                بس قبل ما أقولك مبروك...
+            </h2>
+
+            <p class="section-sub">
+                عايز أرجع معاكي شوية لورا.
+                <br>
+                مش عشان أفكرك بالتعب...
+                بالعكس.
+                عشان أفكرك إنك عديتيه.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CHAT
+===================================================== -->
+
+<section class="chat-section">
+
+    <div class="container">
+
+        <div class="center">
+
+            <span class="small-label">
+                memories from the hard days
+            </span>
+
+            <h2 class="section-title">
+                أنا فاكر كلامك.
+            </h2>
+
+            <p class="section-sub">
+                يمكن إنتي دلوقتي عايزة تنسي كل اللي حصل،
+                بس أنا مش ناسي.
+            </p>
+
+        </div>
+
+
+        <div class="chat-box">
+
+            <div class="chat-top">
+
+                <div class="chat-avatar">
+                    🐱
+                </div>
+
+                <div>
+                    <div class="chat-name">
+                        ميكي 🩷
+                    </div>
+
+                    <div class="chat-status">
+                        كانت بتذاكر...
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="messages">
+
+                <!-- عدل الكلام هنا لو عايز تحط كلامها الحقيقي -->
+
+                <div class="message her">
+                    أنا تعبت بجد ومش قادرة أكمل 😭
+                </div>
+
+                <div class="message me">
+                    استحملي شوية بس، إنتي قدها والله.
+                </div>
+
+                <div class="message her">
+                    بس أنا حاسة إني مش قادرة أذاكر أكتر.
+                </div>
+
+                <div class="message me">
+                    عارف إنك تعبانة، بس كملي اللي تقدري عليه.
+                    وبعدها هترتاحي.
+                </div>
+
+                <div class="message her">
+                    أنا خلاص نفسي الامتحانات تخلص.
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SCREENSHOTS
+===================================================== -->
+
+<section class="memories">
+
+    <div class="container">
+
+        <div class="center">
+
+            <span class="small-label">
+                screenshots i kept
+            </span>
+
+            <h2 class="section-title">
+                الأيام اللي إنتي يمكن نسيتيها...
+            </h2>
+
+            <p class="section-sub">
+                حطيتلك هنا شوية من الكلام اللي كان بيوضح قد إيه
+                الفترة دي كانت تقيلة عليكي.
+            </p>
+
+        </div>
+
+
+        <div class="memory-grid">
+
+            <div class="memory-card">
+
+                <img src="assets/screenshot-1.jpg"
+                     alt="Screenshot">
+
+                <div class="memory-caption">
+                    هنا كنتي بتقولي إنك خلاص مش قادرة 🥺
+                </div>
+
+            </div>
+
+
+            <div class="memory-card">
+
+                <img src="assets/screenshot-2.jpg"
+                     alt="Screenshot">
+
+                <div class="memory-caption">
+                    وهنا كان الضغط باين أكتر من أي كلام.
+                </div>
+
+            </div>
+
+
+            <div class="memory-card">
+
+                <img src="assets/screenshot-3.jpg"
+                     alt="Screenshot">
+
+                <div class="memory-caption">
+                    يوم تاني... وبرضه كملتي.
+                </div>
+
+            </div>
+
+
+            <div class="memory-card">
+
+                <img src="assets/screenshot-4.jpg"
+                     alt="Screenshot">
+
+                <div class="memory-caption">
+                    ولحد هنا... الحكاية لسه مخلصتش.
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     EMOTIONAL
+===================================================== -->
+
+<section class="emotional">
+
+    <div class="container">
+
+        <span class="small-label">
+            pause.
+        </span>
+
+        <h2>
+            عايزك تعرفي حاجة...
+        </h2>
+
+        <p>
+            أنا عارف إن يمكن من برا الموضوع كان مجرد
+            "امتحانات وبتعدي".
+            <br><br>
+
+            بس أنا عارف إن الموضوع بالنسبالك مكنش كده.
+            <br><br>
+
+            كان فيه أيام صحيتي فيها وإنتي مش طايقة تفتحي كتاب.
+            وكان فيه أيام ذاكرتي فيها وإنتي أصلاً مستنزفة.
+            وكان فيه لحظات كتير نفسك فيها تقفلي كل حاجة
+            وتقولي "كفاية بقى".
+            <br><br>
+
+            ويمكن محدش شاف كل التفاصيل دي...
+            بس أنا شايفها.
+            <br><br>
+
+            وشايف إنك، رغم كل ده،
+            فضلتي بتحاولي.
+        </p>
+
+        <span class="highlight">
+            وده أكتر سبب مخليني فخور بيكي. 🩷
+        </span>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SOLVED
+===================================================== -->
+
+<section class="solved">
+
+    <div class="container">
+
+        <span class="small-label">
+            and then...
+        </span>
+
+        <h2 class="section-title">
+            حصل اللي كنا مستنيينه.
+        </h2>
+
+        <p class="section-sub">
+            البنت اللي كانت بتقول "مش قادرة"...
+            دخلت الامتحان.
+        </p>
+
+
+        <div class="solved-word">
+
+            <div class="word">
+                دخلتي 📚
+            </div>
+
+            <div class="word">
+                حليتي ✍️
+            </div>
+
+            <div class="word">
+                خلصتي 😭
+            </div>
+
+            <div class="word">
+                وعديتيها 🩷
+            </div>
+
+        </div>
+
+
+        <p class="section-sub">
+            ودي اللحظة اللي نفسي تفتكريها كل ما تشكي في نفسك:
+            <br><br>
+
+            <strong>
+                إنتي كنتي فاكرة إنك مش هتقدري...
+                وطلعتي قدها.
+            </strong>
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PHOTO
+===================================================== -->
+
+<section class="photo">
+
+    <div class="container">
+
+        <span class="small-label">
+            finally...
+        </span>
+
+        <h2 class="section-title">
+            صاحبة الإنجاز ظهرت 🐱
+        </h2>
+
+        <p class="section-sub">
+            أكيد لازم نحط صورة صاحبة كل الحكاية.
+        </p>
+
+
+        <div class="photo-frame">
+
+            <!-- حط صورة ميكي هنا -->
+
+            <img src="assets/miki.jpg"
+                 alt="ميكي">
+
+        </div>
+
+
+        <div class="photo-title">
+            ميكي بتاعتي 🩷
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     LETTER
+===================================================== -->
+
+<section class="letter">
+
+    <div class="container">
+
+        <div class="center">
+
+            <span class="small-label">
+                a letter from hamokashtak
+            </span>
+
+            <h2 class="section-title">
+                طب اسمعيني بقى...
+            </h2>
+
+        </div>
+
+
+        <div class="letter-paper">
+
+            <h3>
+                يا ميكي، 🩷
+            </h3>
+
+            <p>
+
+                أنا مش عارف أبدأ الرسالة دي منين،
+                بس يمكن أحسن حاجة أقولها من الأول:
+                <br><br>
+
+                <strong>
+                أنا فخور بيكي.
+                </strong>
+
+                <br><br>
+
+                ومش فخور بيكي عشان خلصتي الامتحانات وخلاص.
+                أنا فخور بيكي عشان كل حاجة حصلت قبل ما تخلصي.
+                <br><br>
+
+                فخور بكل مرة كنتي تعبانة وبرضه فتحتي الكتاب.
+                بكل مرة كان نفسك تنامي وبرضه حاولتي تكملي.
+                بكل مرة قولتي "أنا مش قادرة"
+                وبعدها قمتي وعملتي اللي تقدري عليه.
+                <br><br>
+
+                يمكن إنتي شايفة إن ده عادي،
+                ويمكن تقولي "ما كل الناس بتذاكر".
+                بس أنا شايف الفرق.
+                <br><br>
+
+                شايف إنك كنتي تحت ضغط،
+                وشايف إن الموضوع كان واخد من طاقتك،
+                وشايف إن في أيام كان مجرد إنك تكملي فيها
+                يعتبر إنجاز لوحده.
+                <br><br>
+
+                وعشان كده...
+                متقلليش من نفسك.
+                <br><br>
+
+                متبصيش بس على النتيجة،
+                بصي على البنت اللي كانت قبلها.
+                البنت اللي كانت خايفة،
+                وتعبانة،
+                ومخنوقة،
+                وبرضه كملت.
+                <br><br>
+
+                دي البنت اللي أنا فخور بيها.
+                <br><br>
+
+                ودلوقتي بقى...
+                <br><br>
+
+                نامي براحتك.
+                اضحكي براحتك.
+                اخرجي.
+                العبي.
+                كلي حاجة بتحبيها.
+                واقفلي أي كتاب تشوفيه قدامك 😂.
+                <br><br>
+
+                لأنك تستاهلي ترتاحي.
+                تستاهلي تحسي إنك خلصتي.
+                وتستاهلي تبصي لنفسك وتقولي:
+                <br><br>
+
+                <strong>
+                "أنا عملتها."
+                </strong>
+
+                <br><br>
+
+                وأنا عايزك تعرفي إن مهما كنتي شايفة نفسك ضعيفة
+                في لحظة من اللحظات...
+                أنا كنت شايف فيكي قوة أكبر بكتير.
+                <br><br>
+
+                مبروك يا ميكي.
+                <br>
+                بجد مبروك.
+                <br><br>
+
+                ودلوقتي...
+                <br>
+
+                <strong>
+                وقت الدلع بقى يا ست ميكي 😂🩷
+                </strong>
+
+            </p>
+
+
+            <div class="signature">
+                — حموكشتك 🩷
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     GAME
+===================================================== -->
+
+<section class="game-section">
+
+    <div class="container">
+
+        <span class="small-label">
+            one last thing...
+        </span>
+
+        <h2 class="section-title">
+            قبل ما نخلص...
+        </h2>
+
+        <p class="section-sub">
+            في قطة صغيرة تايهة.
+            <br>
+            ساعديها توصل للقلب.
+            <br><br>
+            ومش هقولك ليه دلوقتي. 👀
+        </p>
+
+
+        <div class="game-container">
+
+            <div class="game" id="game">
+
+                <div class="wall w1"></div>
+                <div class="wall w2"></div>
+                <div class="wall w3"></div>
+                <div class="wall w4"></div>
+                <div class="wall w5"></div>
+
+                <div class="game-dot"
+                     style="left:20%;top:40%"></div>
+
+                <div class="game-dot"
+                     style="left:70%;top:15%"></div>
+
+                <div class="game-dot"
+                     style="left:45%;top:80%"></div>
+
+                <div class="player" id="player">
+                    🐱
+                </div>
+
+                <div class="goal">
+                    ❤️
+                </div>
+
+            </div>
+
+
+            <div class="controls">
+
+                <button class="empty"></button>
+
+                <button onclick="move(0,-1)">
+                    ↑
+                </button>
+
+                <button class="empty"></button>
+
+                <button onclick="move(-1,0)">
+                    ←
+                </button>
+
+                <button onclick="move(0,1)">
+                    ↓
+                </button>
+
+                <button onclick="move(1,0)">
+                    →
+                </button>
+
+            </div>
+
+
+            <div class="game-note">
+                استخدمي الأسهم أو اسحبي بإيدك على الموبايل 🐾
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     WIN
+===================================================== -->
+
+<div class="win" id="win">
+
+    <div class="win-card">
+
+        <div class="win-cat">
+            🐱
+        </div>
+
+        <h2>
+            وصلنا ❤️
+        </h2>
+
+        <p>
+            القطة أخيرًا لقت المكان اللي كانت بتدور عليه...
+            <br><br>
+
+            بس يمكن السؤال الحقيقي:
+            <br>
+            هي كانت بتدور على إيه؟
+        </p>
+
+        <span class="win-heart">
+            ❤️
+        </span>
+
+        <p>
+            <strong>
+                مكانها في قلبي.
+            </strong>
+        </p>
+
+        <button class="continue"
+                onclick="finishGame()">
+            كملي يا ميكي 🩷
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     FINAL
+===================================================== -->
+
+<section class="final" id="final">
+
+    <div class="final-content">
+
+        <div class="final-cat">
+            🐱
+        </div>
+
+        <span class="small-label">
+            end of the little journey
+        </span>
+
+        <h2>
+            خلصتي يا ميكي.
+        </h2>
+
+        <p>
+
+            مفيش امتحان مستنيكي.
+            <br>
+            مفيش كتاب لازم تفتحيه.
+            <br>
+            مفيش "لازم أخلص الجزء ده الأول".
+            <br><br>
+
+            دلوقتي دوري على نفسك شوية.
+            <br><br>
+
+            وافتكري إن البنت اللي كانت بتقول
+            "أنا مش قادرة"...
+            <br>
+            هي نفسها البنت اللي وصلت للآخر.
+            <br><br>
+
+            فلو في حاجة واحدة بس عايزك تاخديها من الموقع ده:
+            <br><br>
+
+            <strong>
+                متشكّيش في نفسك بسرعة.
+            </strong>
+
+            <br><br>
+
+            إنتي أقوى مما كنتي فاكرة.
+            <br>
+            وأنا فخور بيكي أوي.
+            <br><br>
+
+            ومبروك يا ملك...
+            <br>
+
+            <strong>
+                أو ميكي زي ما بتحبي 😂🩷
+            </strong>
+
+        </p>
+
+
+        <div class="final-sign">
+            من حموكشتك،
+            <br>
+            اللي كان مستني اللحظة دي عشان يقولك:
+            <br>
+            <strong>أهو خلصتي يا بت 😭❤️</strong>
+        </div>
+
+        <div class="final-heart">
+            🩷
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+/* =====================================================
+   ELEMENTS
+===================================================== */
+
+const opening = document.getElementById("opening");
+const song = document.getElementById("song");
+const musicBtn = document.getElementById("musicBtn");
+
+
+/* =====================================================
+   START
+===================================================== */
+
+function start(){
+
+    opening.classList.add("hide");
+
+    musicBtn.classList.add("show");
+
+    song.volume = 0.45;
+
+    song.play()
+        .then(()=>{
+            musicBtn.classList.add("playing");
+        })
+        .catch(()=>{
+            console.log("Music blocked.");
+        });
+
+    hearts();
+
+}
+
+
+/* =====================================================
+   MUSIC
+===================================================== */
+
+function toggleMusic(){
+
+    if(song.paused){
+
+        song.play();
+
+        musicBtn.textContent="🎵";
+
+        musicBtn.classList.add("playing");
+
+    }else{
+
+        song.pause();
+
+        musicBtn.textContent="🔇";
+
+        musicBtn.classList.remove("playing");
+
+    }
+
+}
+
+
+/* =====================================================
+   SCROLL
+===================================================== */
+
+function go(id){
+
+    document.getElementById(id)
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+
+}
+
+
+/* =====================================================
+   PARTICLES
+===================================================== */
+
+function hearts(){
+
+    const items=[
+        "🩷",
+        "🩵",
+        "🐱",
+        "🐾",
+        "✨",
+        "♡"
+    ];
+
+    for(let i=0;i<25;i++){
+
+        setTimeout(()=>{
+
+            const p=document.createElement("div");
+
+            p.className="particle";
+
+            p.textContent=
+                items[Math.floor(Math.random()*items.length)];
+
+            p.style.left=
+                Math.random()*100+"vw";
+
+            p.style.top=
+                (65+Math.random()*25)+"vh";
+
+            document.body.appendChild(p);
+
+            setTimeout(()=>{
+                p.remove();
+            },2600);
+
+        },i*90);
+
+    }
+
+}
+
+
+/* =====================================================
+   GAME
+===================================================== */
+
+const player=document.getElementById("player");
+const game=document.getElementById("game");
+
+let x=20;
+let y=20;
+
+const speed=18;
+
+let won=false;
+
+
+/* =====================================================
+   MOVE
+===================================================== */
+
+function move(dx,dy){
+
+    if(won) return;
+
+    const maxX=game.clientWidth-55;
+    const maxY=game.clientHeight-55;
+
+    x += dx*speed;
+    y += dy*speed;
+
+    x=Math.max(5,Math.min(maxX,x));
+    y=Math.max(5,Math.min(maxY,y));
+
+    player.style.left=x+"px";
+    player.style.top=y+"px";
+
+    checkGoal();
+
+}
+
+
+/* =====================================================
+   KEYBOARD
+===================================================== */
+
+document.addEventListener("keydown",(e)=>{
+
+    if(e.key==="ArrowUp")
+        move(0,-1);
+
+    if(e.key==="ArrowDown")
+        move(0,1);
+
+    if(e.key==="ArrowLeft")
+        move(-1,0);
+
+    if(e.key==="ArrowRight")
+        move(1,0);
+
+});
+
+
+/* =====================================================
+   SWIPE
+===================================================== */
+
+let startX=0;
+let startY=0;
+
+game.addEventListener("touchstart",(e)=>{
+
+    startX=e.touches[0].clientX;
+    startY=e.touches[0].clientY;
+
+},{passive:true});
+
+
+game.addEventListener("touchend",(e)=>{
+
+    const endX=e.changedTouches[0].clientX;
+    const endY=e.changedTouches[0].clientY;
+
+    const dx=endX-startX;
+    const dy=endY-startY;
+
+    if(Math.abs(dx)<20 && Math.abs(dy)<20)
+        return;
+
+    if(Math.abs(dx)>Math.abs(dy)){
+
+        if(dx>0)
+            move(1,0);
+        else
+            move(-1,0);
+
+    }else{
+
+        if(dy>0)
+            move(0,1);
+        else
+            move(0,-1);
+
+    }
+
+},{passive:true});
+
+
+/* =====================================================
+   GOAL
+===================================================== */
+
+function checkGoal(){
+
+    const goal=document.querySelector(".goal");
+
+    const p=player.getBoundingClientRect();
+    const g=goal.getBoundingClientRect();
+
+    const distance=Math.sqrt(
+        Math.pow(p.left-g.left,2)+
+        Math.pow(p.top-g.top,2)
+    );
+
+    if(distance<75){
+
+        won=true;
+
+        document.getElementById("win")
+            .classList.add("show");
+
+        hearts();
+
+    }
+
+}
+
+
+/* =====================================================
+   FINISH GAME
+===================================================== */
+
+function finishGame(){
+
+    document.getElementById("win")
+        .classList.remove("show");
+
+    setTimeout(()=>{
+
+        document.getElementById("final")
+            .scrollIntoView({
+                behavior:"smooth"
+            });
+
+        setTimeout(()=>{
+            hearts();
+        },800);
+
+    },400);
+
+}
+
+
+/* =====================================================
+   INITIAL POSITION
+===================================================== */
+
+window.addEventListener("load",()=>{
+
+    player.style.left=x+"px";
+    player.style.top=y+"px";
+
+});
+
+</script>
+
+</body>
+</html>
